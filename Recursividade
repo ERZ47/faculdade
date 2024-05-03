@@ -17,3 +17,44 @@ public class Main {
         return base * total(base, exponent - 1);
     }
 }
+
+
+b) Escreva uma função recursiva que calcule a soma dos dígitos de um número
+inteiro. Por exemplo, se a entrada for 123, a saída deverá ser 1+2+3 = 6.
+import java.util.Scanner;
+
+public class main2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        int sum = sumDigits(num);
+        System.out.printf("Sum of digits: %d%n", sum);
+    }
+
+    public static int sumDigits(int num) {
+        if (num < 10) {
+            return num;
+        }
+        return (num % 10 + sumDigits(num / 10));
+    }
+}
+
+3 Dado um número n na base decimal, escreva uma função recursiva que
+converte este número para binário.
+
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 10;
+        System.out.printf("O número %d em binário é: %s%n", n, convertDecimalToBinary(n));
+    }
+
+    public static String convertDecimalToBinary(int n) {
+        if (n == 0) {
+            return "0";
+        }
+        return convertDecimalToBinary(n / 2) + String.valueOf(n % 2);
+    }
+}
+
